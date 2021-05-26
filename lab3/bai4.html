@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai4</title>
+</head>
+
+<body>
+    <form action="#">
+        <div>
+            <label for="#">1st Person Name<input type="text" name="name_1"></label>
+        </div>
+        <div>
+            <label for="#">1st Person Age<input type="number" name="age_1"></label>
+        </div>
+        <div>
+            <label for="#">1st Person Address<input type="text" name="address_1"></label>
+        </div>
+        <div>
+            <label for="#">2nd Person Name<input type="text" name="name_2"></label>
+        </div>
+        <div>
+            <label for="#">2nd Person Age<input type="number" name="age_2"></label>
+        </div>
+        <div>
+            <label for="#">2nd Person Address<input type="text" name="address_2"></label>
+        </div>
+        <button id="btn">Show profile</button>
+    </form>
+
+    <div id="show1">
+
+    </div>
+    <div id="show2">
+
+    </div>
+    <script>
+        var name_1 = document.querySelector('input[name="name_1"]');
+        var age_1 = document.querySelector('input[name="age_1"]');
+        var address_1 = document.querySelector('input[name="address_1"]');
+        var name_2 = document.querySelector('input[name="name_2"]');
+        var age_2 = document.querySelector('input[name="age_2"]');
+        var address_2 = document.querySelector('input[name="address_2"]');
+        function Person(name, address, age) {
+            this.name = name;
+            this.age = age;
+            this.address = address;
+            this.showProfile = () => {
+                return `${this.name} - ${this.age} - ${this.address}`;
+            }
+        }
+
+        document.querySelector('#btn').addEventListener('click', (e) => {
+            if (name_1.value != '' && age_1.value != '' && address_1 != '' && name_2.value != '' && age_2.value != '' && address_2 != '') {
+                var FirstPerson = new Person(name_1.value, address_1.value, age_1.value);
+                var SecondPerson = new Person(name_2.value, address_2.value, age_2.value);
+                document.querySelector('#show1').innerHTML = FirstPerson.showProfile();
+                document.querySelector('#show2').innerHTML = SecondPerson.showProfile();
+                e.preventDefault();
+            } else {
+                alert('Nhập đầy đủ thông tin');
+            }
+        });
+
+    </script>
+
+</html>

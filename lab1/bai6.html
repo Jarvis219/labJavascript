@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai6</title>
+    <script src="./js/moment.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <form>
+            <div>
+                <label for="#">Date <input type="number" name="" id="days" max="31"></label>
+            </div>
+            <div>
+                <label for="#">Month <input type="number" name="" id="month" max="12"></label>
+            </div>
+            <div>
+                <label for="#">Year <input type="number" name="" id="year" minlength="4"></label>
+            </div>
+            <button type="button">Convert</button>
+        </form>
+    </div>
+    <h2 id="dayM"></h2>
+    <script>
+        var days = document.querySelector('#days');
+        var month = document.querySelector('#month');
+        var year = document.querySelector('#year');
+
+        document.querySelector('button').addEventListener('click', () => {
+            var todays = moment(year.value + '-' + month.value + '-' + days.value);
+            document.querySelector('#dayM').innerHTML = todays.format('dddd');
+
+        });
+
+    </script>
+</body>
+
+</html>

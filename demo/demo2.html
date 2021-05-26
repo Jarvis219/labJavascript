@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo 2</title>
+</head>
+
+<body>
+    <div>
+        <select name="tagName" id="">
+            <option value="1">the P</option>
+            <option value="2">the strong</option>
+            <option value="3">the Input</option>
+            <option value="4">the button</option>
+        </select>
+        <div class="content"></div>
+    </div>
+
+    <script>
+        var tagName = document.querySelector('[name="tagName"]');
+        var content = document.querySelector('.content');
+        // var arr = [];
+        tagName.onchange = () => {
+            const element = tagName.value;
+            var p = document.createElement('p');
+            var strong = document.createElement('strong');
+            var inp = document.createElement('input');
+            var btn = document.createElement('button');
+            if (element == 1) {
+                const tp = content.appendChild(p).innerHTML = 'the P';
+            } else if (element == 2) {
+                const tstrong = content.appendChild(strong).innerHTML = 'the strong';
+            } else if (element == 3) {
+                const tinp = content.appendChild(inp).innerHTML = 'the input';
+            } else {
+                const tbtn = content.appendChild(btn).innerHTML = 'the button';;
+            }
+        }
+
+    </script>
+
+    <!-- <div>
+        <p>hello world</p>
+
+    </div>
+    <div>
+        <input type="text" name="name" id="">
+        <button>click</button>
+    </div>
+
+    <script>
+        document.querySelector('button').onclick = () => {
+            document.querySelector('p').innerHTML = document.querySelector('input[name="name"]').value;
+        }
+    </script> -->
+    <!-- <script>
+        var text = document.querySelector('p');
+        setTimeout(() => {
+            text.style.backgroundColor = 'green';
+            text.style.color = 'white';
+            text.innerHTML = 'change text'
+        }, 3000);
+    </script> -->
+</body>
+
+</html>

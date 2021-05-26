@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai4</title>
+</head>
+
+<body>
+    <div>
+        <form action="#">
+            <div>
+                <label for="#">Email <input type="email" id="gmail"></label><br>
+                <input type="submit" name="" value="check" id="btn">
+            </div>
+        </form>
+        <span id="total" style="font-weight: 900; font-size: 50px; text-transform: uppercase;"></span>
+    </div>
+
+    <script>
+        var gmail = document.querySelector('#gmail');
+        var btn = document.querySelector('#btn');
+        var total = document.querySelector('#total');
+        btn.addEventListener('click', () => {
+            total.innerHTML = /^\b.{5,32}\w{2,}(\.\w{2,4}){1,2}$/g.test(gmail.value);
+        });
+
+    </script>
+</body>
+
+</html>

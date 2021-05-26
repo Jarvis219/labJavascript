@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai2</title>
+    <style>
+        #color {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="color">
+
+        </div>
+        <div>
+            <button id="changeColor">Change color</button>
+        </div>
+    </div>
+    <script>
+
+        var color = document.querySelector('#color');
+        document.querySelector('#changeColor').onclick = () => {
+            setTimeout(() => {
+                color.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+            }, 1000);
+        };
+
+    </script>
+</body>
+
+</html>

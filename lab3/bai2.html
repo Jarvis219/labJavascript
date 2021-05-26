@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai2</title>
+</head>
+
+<body>
+    <div>
+        <label for="">subject Name</label>
+        <input type="text" name="name" id="">
+    </div>
+    <div>
+        <label for="">Point</label>
+        <input type="number" name="point" id="">
+    </div>
+    <input type="button" name="" id="" value="Add" onclick="addSubject()">
+    <p id="student_name"></p>
+    <p id="student_age"></p>
+    <p id="student_address"></p>
+    <p>Subject: </p>
+    <ul id="subject"></ul>
+    <script>
+        var Student = {
+            name: 'name1',
+            age: 18,
+            address: 'HN',
+            subjects: [
+                {
+                    name: 'js',
+                    point: 9,
+                }
+            ],
+        };
+
+        console.log(Student);
+
+        console.log(Student.subjects);
+
+
+        function start() {
+            var student_name = document.querySelector('#student_name');
+            var student_age = document.querySelector('#student_age');
+            var student_address = document.querySelector('#student_address');
+            var subject = document.querySelector('#subject');
+            var t = Student.subjects.map(element => {
+                return `<li>${element.name} - ${element.point}</li>`;
+            }).join('');
+            student_name.innerHTML = Student.name;
+            student_age.innerHTML = Student.age;
+            student_address.innerHTML = Student.address;
+            subject.innerHTML = t;
+        }
+        start();
+        function addSubject() {
+            const names = document.querySelector("input[name='name']").value;
+            const point = document.querySelector("input[name='point']").value;
+            Student.subjects.push({ name: names, point: point });
+            start();
+        }
+    </script>
+</body>
+
+</html>

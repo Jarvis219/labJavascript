@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai3</title>
+    <style>
+        .user_item {
+            color: green;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul id="target">
+
+        </ul>
+
+    </div>
+
+    <script>
+        var users = [
+            {
+                id: 1, name: 'james Smith', gender: 1
+            },
+            {
+                id: 2, name: 'Isla Brown', gender: 2
+            },
+            {
+                id: 3, name: 'Amelia Davies', gender: 2
+            },
+            {
+                id: 4, name: 'Jacob Evans', gender: 1
+            }
+
+        ];
+
+        var target = document.querySelector('#target');
+
+        // C1
+        // users.forEach(function (element, index) {
+        //     var lis = document.createElement('li');
+        //     lis.innerText = element.id + ' - ' + element.name + ' - ' + (element.gender == 1 ? 'male' : 'female');
+        //     lis.setAttribute('class', 'user_item')
+        //     target.appendChild(lis);
+        // });
+
+        //C2
+        const ct = users.map((element, index, users) => {
+            var lis = document.createElement('li');
+            return `<li class="user_item">${element.id} - ${element.name} - ${element.gender == 1 ? 'male' : 'female'}</li>`;
+        }).join('');
+        target.innerHTML = ct;
+
+    </script>
+</body>
+
+</html>

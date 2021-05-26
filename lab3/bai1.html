@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài1</title>
+</head>
+
+<body>
+
+
+    <script>
+        var Student = {
+            id: 123,
+            fullname: 'kaio',
+            email: 'hjjh@gmail.com',
+            avatar: 'img',
+            address: 'Hn',
+            study_major: 'web',
+            avgScore: 9,
+            getAvgScore: function () {
+                console.log(this.avgScore);
+            },
+            setAvgScore: function (point) {
+                this.point = point
+                console.log(point);
+            },
+            changeAddress: function (address) {
+                this.address = address;
+                console.log(address);
+            },
+
+        }
+        Student.setAvgScore();
+
+
+
+
+    </script>
+</body>
+
+</html>

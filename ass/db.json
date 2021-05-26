@@ -1,0 +1,42 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "lap top"
+        },
+        {
+            "id": 2,
+            "name": "mouse"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "title": "macbook",
+            "categoryID": 1,
+            "content": "macbook 2021",
+            "image": "https://picsum.photos/200/300"
+        },
+        {
+            "id": 2,
+            "title": "mouse 2",
+            "categoryID": 2,
+            "content": "mouse 2 2020",
+            "image": "https://picsum.photos/200/300"
+        },
+        {
+            "title": "dell",
+            "categoryID": "1",
+            "id": 3,
+            "content": "laptop dell 2 2020",
+            "image": "https://picsum.photos/200/300"
+        },
+        {
+            "title": "dells",
+            "categoryId\n": "1",
+            "id": 4,
+            "content": "lap top windowns 2 2022",
+            "image": "https://picsum.photos/200/300"
+        }
+    ]
+}

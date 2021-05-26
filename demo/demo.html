@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="range" name="" id="">
+
+    <script>
+        var arr = ['one', 'two', 'three', 'fore', 'five'];
+
+        // chuyển mảng thành chuỗi bằng toString và join
+
+        var to_arr = arr.toString();
+        var join_arr = arr.join('-');
+        // console.log(to_arr);
+        // console.log(join_arr);
+
+        // thêm 1 phần tử vào cuối mảng 
+
+        var push_arr = arr.push('pt1');
+        // console.log(arr);
+
+        // lấy phần tử cuối cùng của mảng và loại bỏ phần tử đó khỏi mảng ban đầu 
+
+        var pop_arr = arr.pop();
+        // console.log(arr);
+
+        // thêm 1 phần tử vào đầu mảng
+
+        var un_arr = arr.unshift('first');
+        // console.log(arr);
+
+        // lấy ra phân tử đầu tiên đồng thời loại bỏ khỏi mảng ban đầu
+
+        var shift_arr = arr.shift();
+        // console.log(arr);
+
+        // lấy ra phần tử có vị trí index bắt đầu và kết thúc 
+
+        var sli_arr = arr.slice(1, 4);
+        // console.log(sli_arr);
+
+        // tìm kiếm giá trị thỏa mãn yêu cầu
+
+        var filter_arr = arr.filter((value, index) => {
+            return value == 'three';
+        });
+        console.log(`ham filter ${filter_arr}`);
+
+
+        // đảo ngược thứ tự trong mảng
+
+        var re_arr = arr.reverse();
+        // console.log(arr);
+
+        // thêm, sửa, xóa phần tử ở vị trí bất kì splice(trị trí bắt đầu,số phần tử cần xóa,giá trị phần tử chèn thêm vào)
+
+        var spli_arr = arr.splice(1, 0, 100, 200, 300);
+        // console.log(arr);
+
+        // sắp xếp mảng theo thứ tự
+
+        var sof_arr = arr.sort((a, b) => {
+            return a - b;
+        });
+        // console.log(sof_arr);
+
+
+        // vòng lặp foreach 
+
+        var loop = arr.forEach((element, index) => {
+            console.log(index + '-' + element);
+        });
+
+        // duyệt qua từng phần tử mà k ảnh hưởng đến mảng gốc
+
+        var map_arr = arr.map((element, index) => {
+            // console.log(index + '-' + element);
+            return element;
+        });
+        console.log(map_arr);
+
+
+    </script>
+
+    <script>
+        // các hàm xử lý chuỗi
+
+        var str = 'demo 1 xử lý 1 chuỗi';
+
+        // tính độ dài ký tự của chuỗi
+        var leg_str = str.length;
+        // console.log(leg_str);
+
+        // kiểm tra chuỗi có xuất hiên hay k bắt đầu từ index 0 và k tìm thấy kết quả sẽ trả về -1;
+        var of_str = str.indexOf('lý');
+        // console.log(of_str);
+
+        // kiểm tra chuỗi có xuất hiên hay k bắt đầu từ index 0 và k tìm thấy kết quả sẽ trả về -1 những sẽ trả về vị trí cuối cùng
+
+        var last_str = str.lastIndexOf(' ');
+        // console.log(last_str);
+
+        // tìm kếm thông qua regex
+
+        var search_str = str.search('1');
+        // console.log(search_str);
+
+        // trả về 1 chuỗi mới đc cắt ra từ chuỗi gốc slice(start,[stop]) nếu star>stop=> chuỗi rỗng nếu start truyền vào là số âm thì sẽ lấy chuỗi ngược lại
+
+        var sli_str = str.slice(5, 9);
+        console.log(sli_str);
+
+
+        //  substring(start, stop) giống như slice nhưng nếu start>stop thì giá trị của 2 tham số này sẽ đổi chỗ cho nhau
+        var sub_str = str.substring(9, 5);
+        // console.log(sub_str);
+
+        // substr(start, [length]) phương thức cắt chuỗi dựa vào start-vị trí index, và length số lượng ký tự cắt, nếu start<0 sẽ cắt ngược lại chuỗi và length<=0 sẽ trả về chuỗi rỗng, k truyền length thì sẽ tính từ start->cuối;
+
+        var substr_str = str.substr(4, 2);
+        // console.log(substr_str);
+
+        // replace('từ tìm thay thế', 'từ thay thế') và chỉ thay thế giá trị đầu tiên tìm đc;
+        var replace_str = str.replace('1', 'ok');
+        console.log(replace_str);
+        // thay thế tất cả các vị trí bằng loop
+        // Cach 1
+        var replace_strs = [];
+        for (var i = 0; i < str.length; i++) {
+            // console.log(str[i]);
+            replace_strs.push(str[i].replace('1', 'ok'));
+        }
+
+        console.log(replace_strs.join(''));
+
+        // Cach 2
+        // console.log(str.indexOf('1') != -1);
+        while (str.indexOf('1') != -1) {
+            str = str.replace('1', 'ok');
+        }
+        console.log(str);
+
+
+        // split chuyển đổi 1 chuỗi trở thành mảng
+        var split_str = str.split();
+        // console.log(split_str);
+
+        // concat nối chuỗi lại với nhau
+        var con_str = ', chuoi so 2';
+        var concat_str = str.concat(con_str);
+        // console.log(concat_str);
+
+
+        // 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai5</title>
+    <script src="./js/moment.min.js"></script>
+
+</head>
+
+<body>
+    <div>
+        <form>
+            <div>
+                <label for="#">Date <input type="number" name="" id="days" max="31"></label>
+            </div>
+            <div>
+                <label for="#">Month <input type="number" name="" id="month" max="12"></label>
+            </div>
+            <div>
+                <label for="#">Year <input type="number" name="" id="year" minlength="4"></label>
+            </div>
+            <button type="button">Convert</button>
+        </form>
+    </div>
+    <div>
+        <h3 id="one"></h3>
+        <h3 id="two"></h3>
+        <h3 id="three"></h3>
+        <h3 id="fore"></h3>
+        <h3 id="five"></h3>
+    </div>
+
+
+    <script>
+        var dt = moment("2019/11/01", "YYYY/MM/DD");
+
+        console.log(dt.format("DDDD"));
+        var days = document.querySelector('#days');
+        var month = document.querySelector('#month');
+        var year = document.querySelector('#year');
+
+        var today = new Date();
+        var mot = moment('2021-12-1').format('DD, MMM YYYY');
+        console.log(mot);
+        document.querySelector('button').addEventListener('click', () => {
+            document.querySelector('#one').innerHTML = moment(year.value + '-' + month.value + '-' + days.value).format('YYYY-MM-DD');
+            document.querySelector('#two').innerHTML = moment(year.value + '-' + month.value + '-' + days.value).format('DD/MM/YYYY');
+            document.querySelector('#three').innerHTML = moment(year.value + '-' + month.value + '-' + days.value).format('DD.MM.YYYY');
+            console.log(moment(month.value + '-' + days.value + '-' + year.value, 'MM-DD-YYYY').format('DD, MMM YYYY'));
+            document.querySelector('#fore').innerHTML = moment(year.value + '-' + month.value + '-' + days.value).format('DD, MMM YYYY');
+            document.querySelector('#five').innerHTML = moment(month.value + '-' + days.value + '-' + year.value, 'MM-DD-YYYY').format('DD, MMMM YYYY');
+        });
+
+    </script>
+</body>
+
+</html>

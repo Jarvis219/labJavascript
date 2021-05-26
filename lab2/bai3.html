@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai3</title>
+</head>
+
+<body>
+    <div>
+        <form action="#">
+            <div>
+                <label for="#">String <input type="text" name="" id="str"></label>
+            </div>
+            <input type="submit" value="Convert" name="" id="btn">
+        </form>
+    </div>
+    <span id="total"></span>
+
+    <script>
+        var str = document.querySelector('#str');
+        var btn = document.querySelector("#btn");
+        var total = document.querySelector('#total');
+        // console.log(str);
+        var arr3 = [];
+        btn.onclick = () => {
+            var strs = str.value.split(" ");
+            for (var i = 0; i < strs.length; i++) {
+                // console.log(strs[i]);
+                arr3.push(strs[i].replace(strs[i][0], strs[i][0].toUpperCase()));
+            }
+            const checktext = arr3.join(' ').replace(/\s/g, '');
+            const checkTexts = checktext.replace(/\W/g, '');
+            total.innerHTML = checkTexts;
+        }
+    </script>
+</body>
+
+</html>

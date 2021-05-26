@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">phone</label>
+    <input type="text" name="" id="phoneNumber"><br>
+    <span id="resule"></span>
+    <!-- <script>
+        var inp = document.querySelector('#phoneNumber');
+        var resule = document.querySelector('#resule');
+        inp.addEventListener('blur', () => {
+            const val = inp.value;
+            var check = /(84|0[3|5|7|8|9])+([0-9]{8})/.test(val);
+            if (check) {
+                resule.innerHTML = 'true';
+            } else {
+                resule.innerHTML = 'nhap sai dinh dang so dien thoai';
+            }
+        });
+    </script> -->
+    <script>
+        function example() {
+            try {
+                fail();
+            } catch (e) {
+                console.log("Will finally run?");
+                throw e;
+            } finally {
+                console.log("FINALLY RUNS!");
+            }
+            console.log("This shouldn't be called eh?");
+        }
+        example();
+    </script>
+</body>
+
+</html>

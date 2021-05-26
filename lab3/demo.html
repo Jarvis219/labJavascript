@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/lab1/js/moment.min.js"></script>
+</head>
+
+<body>
+    <!-- <script>
+        var sv = {
+            ma_sinh_vien: '10',
+            ho_va_ten: 'kai',
+            lop: 'web',
+            ngay_nhap_hoc: '1/01/2021',
+            diem_tb: '9',
+            tinhHocLuc: function () {
+                const point = this.diem_tb;
+                if (point >= 0 && point <= 10) {
+                    if (point < 5) {
+                        console.log('hoc luc yeu');
+                    } else if (point >= 5 && point < 7) {
+                        console.log('hoc luc TB');
+                    } else if (point >= 7 && point < 8) {
+                        console.log('hoc luc kha');
+                    } else {
+                        console.log('hoc luc gioi');
+                    }
+                } else {
+                    console.log('0-10');
+                }
+            },
+
+            thoiGianRaTruong: function () {
+
+                const todays = moment(new Date());
+                // console.log(todays);
+                const firts = moment(new Date(this.ngay_nhap_hoc));
+                // console.log(firts);
+                const total = todays.diff(firts, 'month');
+                // console.log(total);
+                const result = 28 - Number(total);
+                // console.log(result);
+                console.log('Số tháng còn lại: ' + result + ' tháng');
+            }
+        };
+        console.log(sv.thoiGianRaTruong());
+
+    </script> -->
+    <script>
+        function checkmarry(husband, wife) {
+            const todays = moment(new Date());
+            const checkHus = moment(new Date(husband));
+            const checkWife = moment(new Date(husband));
+            const totalHus = todays.diff(husband, 'month');
+            const toatlWife = todays.diff(wife, 'month');
+            console.log(totalHus);
+            console.log(toatlWife);
+            if (totalHus >= 20 * 12 && toatlWife >= 18 * 12) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        var old = checkmarry('11/1/2000', '1/1/2002');
+        console.log(old);
+    </script>
+    <!-- <script>
+        function VanDongVien(ma, ten, ngay_sinh, giai_thuong) {
+            this.ma = ma;
+            this.ten = ten;
+            this.ngay_sinh = ngay_sinh;
+            this.giai_thuong = giai_thuong;
+            this.kiemTraDieuKien = (year, old) => {
+                this.old = old
+                const todays = moment(new Date(year));
+                const birth = moment(new Date(this.ngay_sinh));
+                const years = todays.diff(birth, 'year');
+                // console.log(years);
+                return years >= this.old ? true : false
+            }
+            this.themGiaiThuong = (add) => {
+                this.giai_thuong.push(add);
+            }
+            this.danhSachGiaiThuong = () => {
+                console.log(this.ten + ' giai thuong da dat dc : ');
+                this.giai_thuong.forEach(element => {
+                    console.log(element);
+                });
+            }
+        }
+        var dk = new VanDongVien(1, 'kaio', '12/3/2003', ['giai nhat', 'giai nhi'])
+        console.log(dk.kiemTraDieuKien('12/5/2021', 18));
+        console.log(dk.themGiaiThuong('g1'));
+        console.log(dk.themGiaiThuong('g2'));
+        // console.log(dk.giai_thuong);
+        console.log(dk.danhSachGiaiThuong());
+
+    </script> -->
+
+    <!-- <script>
+        function Animal(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.run = () => {
+                console.log(this.name + " is running!");
+            }
+        }
+        function Cat(name, age, gender, hairColor) {
+            Animal.call(this, name, age, gender);
+            this.hairColor = hairColor;
+        }
+        var cat_1 = new Cat('cat_1', 11, 'female', 'blue-500');
+        console.log(cat_1);
+        cat_1.run();
+    </script> -->
+</body>
+
+</html>
